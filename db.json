@@ -1,0 +1,10 @@
+{
+  "flowers": [
+    {
+      "name": "violet",
+      "color": "purple",
+      "petals": 5,
+      "photo": "https://www.nature-and-garden.com/wp-content/uploads/sites/4/2018/08/violet-care.jpg"
+    }
+  ]
+}

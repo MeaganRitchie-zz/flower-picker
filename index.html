@@ -12,20 +12,28 @@
 
 <body>
   <h1 id="flower-header">This Is Our Flower Picker!</h1>
-  <h2>Enter some information about your flower</h2>
-  <label for="flower-color">What color?</label>
-  <select name="color-dropdown" id="flower-color">
-    <option value="no-filter">pick a color</option>
-  </select>
-  <label for="number-petals">How many petals?</label>
-  <select name="petals-dropdown" id="number-petals">
-    <option value="no-filter">pick petal count</option>
-  </select>
-  <label for="flower-height">How tall?</label>
-  <select name="height-dropdown" id="flower-height">
-    <option value="no-filter">pick flower height</option>
-  </select>
-  <button id="search-button">Search</button>
+  <h2 font-family:"aaargh";>Enter some information about your flower</h2>
+  <div id="search-bar">
+    <div>
+      <label class="search-label" for="flower-color">What color?</label>
+      <select name="color-dropdown" id="flower-color">
+        <option value="no-filter">pick a color</option>
+      </select>
+    </div>
+    <div>
+      <label class="search-label" for="number-petals">How many petals?</label>
+      <select name="petals-dropdown" id="number-petals">
+        <option value="no-filter">pick petal count</option>
+      </select>
+    </div>
+    <div>
+      <label class="search-label" for="flower-height">How tall?</label>
+      <select name="height-dropdown" id="flower-height">
+        <option value="no-filter">pick flower height</option>
+      </select>
+    </div>
+    <button id="search-button">Search</button>
+  </div>
   <div id="flower-card-collection"></div>
 </body>
 

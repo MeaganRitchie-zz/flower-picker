@@ -1,7 +1,34 @@
+@font-face {
+    font-family: 'aaarghnormal';
+    src: url('aaargh-webfont.woff2') format('woff2'),
+         url('aaargh-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+  background-color: rgba(175, 192, 225, 0.427);
+}
+h2 {
+  margin-bottom: 8px;
+  font-family: "aaargh";
+}
+#search-bar {
+  background-color: rgba(136, 171, 237, 0.625);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
 img {
   height: 300px;
   width: 300px;
   object-fit: cover;
+  border-radius: 25px 25px 0px 0px;
 }
 
 #flower-card-collection {
@@ -12,15 +39,20 @@ img {
 
 .flower-card {
   box-shadow: 1px 1px 4px black;
-  margin-top: 20px
+  margin-top: 25px;
+  border-radius: 25px;
+  background-color: rgba(245, 241, 222, 0.591);
+}
+
+.flower-card:hover {
+  box-shadow: 2px 2px 8px black;
 }
 
 .flower-name {
   text-align: center;
-
+  margin-top: 6px;
 }
 
 #flower-header {
   text-align: center;
-  
 }

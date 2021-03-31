@@ -2,7 +2,45 @@ const flowerUrl = "http://localhost:3000/flowers" // URL for our backend databas
 const petalInput = document.getElementById("number-petals") // text input for number of petals
 const searchButton = document.getElementById("search-button") // search button
 const flowerCardCollection = document.getElementById("flower-card-collection") // // collection (div) of all of the flower cards displayed
+const colorInput = document.getElementById("flower-color")
 let allFlowersArray = [] // empty array that will be filled with all of the flower objects in our backend database
+
+
+// we need a function that takes an empty array and looks for unique values for a particular key in the flowers database. Then, put those unique values into the empty array
+
+// Populate the petal dropdown
+function petalDropdownPopulate (flowers) {
+  const petalNumberArray = []
+  allFlowersArray.forEach(flower => { // make an array with all of the unique numbers of petals
+    if (petalNumberArray.includes(flower.petals)) {
+    }
+    else {
+      petalNumberArray.push(flower.petals)
+    }
+  })
+  petalNumberArray.forEach(number => {
+    const dropdownOption = document.createElement("option") // create an option element
+    dropdownOption.textContent = number // sets the text content to a number of petals
+    petalInput.append(dropdownOption)
+  })
+}
+
+// Populate the color dropdown
+function colorDropdownPopulate (flowers) {
+  const flowerColorArray = []
+  allFlowersArray.forEach(flower => { // make an array with all of the unique numbers of petals
+    if (flowerColorArray.includes(flower.color)) {
+    }
+    else {
+      flowerColorArray.push(flower.color)
+    }
+  })
+  flowerColorArray.forEach(color => {
+    const dropdownOption = document.createElement("option") // create an option element
+    dropdownOption.textContent = color // sets the text content to a number of petals
+    colorInput.append(dropdownOption)
+  })
+}
 
 // GET the flower data
 fetch(flowerUrl)
@@ -10,10 +48,13 @@ fetch(flowerUrl)
   .then(flowers => {
     allFlowersArray = flowers
     flowerIterator(flowers)
+    petalDropdownPopulate(flowers)
+    colorDropdownPopulate(flowers)
   })
 
 // Renders all flowers in the database
 function flowerIterator(flowers) {
+  flowerCardCollection.innerHTML =""
   flowers.forEach(flower => { // iterates through each flower
     renderFlower(flower) // render the flower and its information
   })
@@ -23,13 +64,31 @@ searchButton.addEventListener("click", searchButtonClick) // listens for click o
 
 // Search function invoked when search button is clicked
 function searchButtonClick() {
-  const petalQuery = petalInput.value // set search query to the text value of the petal input
-  flowerCardCollection.innerHTML = "" // resets the collection of flower cards
+  const colorQuery = colorInput.value // set color query to the text value of the color input
+  const petalQuery = petalInput.value // set petal query to the text value of the petal input
+
+  const filteredFlowerArray1 = []
   allFlowersArray.forEach(flower => { // iterates through the list of flowers
-    if (flower.petals == petalQuery) { // checks to see if the number of petals for each flower matches the search query
-      renderFlower(flower) // if the search query matches, render the flower card
+    if (flower.color == colorQuery) { // checks to see if the number of petals for each flower matches the search query
+      filteredFlowerArray1.push(flower)
     }
   })
+
+  const filteredFlowerArray2 = []
+  filteredFlowerArray1.forEach(flower => { // iterates through the list of flowers
+    if (flower.petals == petalQuery) { // checks to see if the number of petals for each flower matches the search query
+      filteredFlowerArray2.push(flower)
+    }
+  })
+
+  flowerIterator(filteredFlowerArray2)
+  
+  // flowerCardCollection.innerHTML = "" // resets the collection of flower cards
+  // allFlowersArray.forEach(flower => { // iterates through the list of flowers
+  //   if (flower.petals == petalQuery) { // checks to see if the number of petals for each flower matches the search query
+  //     renderFlower(flower) // if the search query matches, render the flower card
+  //   }
+  // })
 }
 
 // Renders the flower card on the page

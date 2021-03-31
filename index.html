@@ -13,7 +13,14 @@
 <body>
   <h1 id="flower-header">This Is Our Flower Picker!</h1>
   <h2>Enter some information about your flower</h2>
-  <input id="number-petals" placeholder="Number of Petals">
+  <label for="flower-color">What color?</label>
+  <select name="color-dropdown" id="flower-color">
+    <option></option>
+  </select>
+  <label for="number-petals">How many petals?</label>
+  <select name="petals-dropdown" id="number-petals">
+    <option></option>
+  </select>
   <button id="search-button">Search</button>
   <div id="flower-card-collection"></div>
 </body>

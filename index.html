@@ -15,11 +15,15 @@
   <h2>Enter some information about your flower</h2>
   <label for="flower-color">What color?</label>
   <select name="color-dropdown" id="flower-color">
-    <option></option>
+    <option value="no-filter">pick a color</option>
   </select>
   <label for="number-petals">How many petals?</label>
   <select name="petals-dropdown" id="number-petals">
-    <option></option>
+    <option value="no-filter">pick petal count</option>
+  </select>
+  <label for="flower-height">How tall?</label>
+  <select name="height-dropdown" id="flower-height">
+    <option value="no-filter">pick flower height</option>
   </select>
   <button id="search-button">Search</button>
   <div id="flower-card-collection"></div>

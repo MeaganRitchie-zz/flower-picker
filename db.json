@@ -1,13 +1,13 @@
 {
   "flowers": [
     {
-      "name": "violet",
+      "name": "Violet",
       "color": "purple",
       "petals": 5,
       "photo": "https://www.nature-and-garden.com/wp-content/uploads/sites/4/2018/08/violet-care.jpg"
     },
     {
-      "name": "bluebonnet",
+      "name": "Bluebonnet",
       "color": "blue",
       "petals": 3,
       "photo": "https://www.highcountrygardens.com/media/catalog/product/t/e/texas_bluebonnet.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:"

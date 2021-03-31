@@ -1,0 +1,23 @@
+img {
+  width:400px;
+  padding: 25px;
+}
+
+#flower-card-collection {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flower-card {
+  box-shadow: 1px 1px 2px black;
+}
+
+.flower-name {
+  text-align: center;
+
+}
+
+#flower-header {
+  text-align: center;
+  
+}

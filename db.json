@@ -1,16 +1,39 @@
 {
   "flowers": [
     {
-      "name": "Violet",
-      "color": "purple",
-      "petals": 5,
-      "photo": "https://www.nature-and-garden.com/wp-content/uploads/sites/4/2018/08/violet-care.jpg"
+      "name": "Fringed Gentian",
+      "color": "blue",
+      "petals": 4,
+      "height": 16,
+      "photo": "http://www.npsnj.org/photo_galleries/images/gentian_fringed_2004sep12_0034_400x400.jpg"
     },
     {
       "name": "Bluebonnet",
       "color": "blue",
-      "petals": 3,
+      "petals": 5,
+      "height": 24,
       "photo": "https://www.highcountrygardens.com/media/catalog/product/t/e/texas_bluebonnet.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:"
+    },
+    {
+      "name": "Avalanche Lily",
+      "color": "yellow",
+      "petals": 6,
+      "height": 12,
+      "photo": "https://www.fs.fed.us/wildflowers/plant-of-the-week/images/yellowavalanchelily/Erythronium_grandiflorum_main_early_nectar_source_for_ground_nesting_bees_in_Spring_NancyCotner_lg.jpg"
+    },
+    {
+      "name": "Western Wallflower",
+      "color": "orange",
+      "petals": 4,
+      "height": 12,
+      "photo": "https://i0.wp.com/www.realgardensgrownatives.com/wp-content/uploads/2020/04/Erysimum-capitatum.jpg?resize=1000%2C1000&ssl=1"
+    },
+    {
+      "name": "Crown Vetch",
+      "color": "pink",
+      "petals": 5,
+      "height": 24,
+      "photo": "https://nhgardensolutions.files.wordpress.com/2013/10/13-crown-vetch.jpg?w=500&h=372"
     }
   ]
 }

@@ -5,6 +5,7 @@ img {
 
 #flower-card-collection {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 

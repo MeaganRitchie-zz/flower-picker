@@ -6,15 +6,15 @@ let allFlowersArray = [] // empty array that will be filled with all of the flow
 
 // GET the flower data
 fetch(flowerUrl)
-.then(response => response.json())
-.then(flowers => {
-  allFlowersArray = flowers
-  flowerIterator(flowers)
-})
+  .then(response => response.json())
+  .then(flowers => {
+    allFlowersArray = flowers
+    flowerIterator(flowers)
+  })
 
 // Renders all flowers in the database
 function flowerIterator(flowers) {
-  flowers.forEach(flower => { // iteratest through each flower
+  flowers.forEach(flower => { // iterates through each flower
     renderFlower(flower) // render the flower and its information
   })
 }
@@ -33,7 +33,7 @@ function searchButtonClick() {
 }
 
 // Renders the flower card on the page
-function renderFlower(flower) { 
+function renderFlower(flower) {
   createFlowerCard(flower)
   flowerNameDisplay(flower)
   flowerImageDisplay(flower)

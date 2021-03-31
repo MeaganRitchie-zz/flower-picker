@@ -9,3 +9,11 @@
 * add some sort of popup information when a flower card is clicked
 * come up with a better title
 * styling!
+
+populate drop downs:
+start with empty array and .include? push to array 
+
+search-
+stack filter
+first filter puts out array.
+then use that filtered array to pass to the next filter and so on.

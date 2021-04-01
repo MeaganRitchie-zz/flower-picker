@@ -135,6 +135,7 @@ function renderFlower(flower) {
   flowerImageDisplay(flower)
   flowerNameDisplay(flower)
   flowerDetailsDisplay(flower)
+  detailOpenButtonDisplay(flower)
 }
 
 // Create a flower card
@@ -173,3 +174,26 @@ function flowerDetailsDisplay(flower) {
   document.getElementById(flower.name).appendChild(flowerList) // append the unordered list to the flower card
   flowerList.append(flowerPetals, flowerColor, flowerHeight) // append the list items to the unordered list
 }
+
+// Create a detail open button
+function detailOpenButtonDisplay(flower) {
+  const detailOpenButton = document.createElement("button") // create button
+  detailOpenButton.id = `${flower}-detail-button` // set button id
+  detailOpenButton.className = "open-button"
+  detailOpenButton.innerHTML = "details" // set button text
+  document.getElementById(flower.name).appendChild(detailOpenButton) // append button to flower card
+  detailOpenButton.addEventListener("click", () => {
+    console.log(flower.name)
+  })
+}
+
+let openButtons = document.getElementsByClassName("open-button") // returns an HTML collection
+const modalContainer = document.getElementById("modal-container")
+const closeButton = document.getElementById("close-button")
+
+
+
+// Hide the modal container when the close button is clicked
+closeButton.addEventListener("click", () => {
+  modalContainer.classList.remove("show")
+})

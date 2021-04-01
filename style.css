@@ -73,3 +73,7 @@ img {
 #flower-header {
   text-align: center;
 }
+
+.modal-container {
+  display: none;
+}

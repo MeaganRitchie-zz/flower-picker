@@ -5,7 +5,8 @@
       "color": "blue",
       "petals": 4,
       "height": 16,
-      "photo": "http://www.npsnj.org/photo_galleries/images/gentian_fringed_2004sep12_0034_400x400.jpg"
+      "photo": "http://www.npsnj.org/photo_galleries/images/gentian_fringed_2004sep12_0034_400x400.jpg",
+      "details": "This is some detail about this particular flower, the Fringed gentian."
     },
     {
       "name": "Bluebonnet",

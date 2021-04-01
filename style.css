@@ -22,7 +22,6 @@ h2 {
   font-family:'aaarghnormal';
 }
 #search-bar {
-  background-color: rgba(166, 190, 235, 0.516);
   padding-top: 10px;
   padding-bottom: 10px;
   width: 500px;
@@ -30,6 +29,10 @@ h2 {
   flex-wrap: wrap;
   justify-content: space-around;
   color: rgb(93, 131, 201);
+  margin-top: 40px;
+  text-align: center;
+  margin:auto;
+  
 }
 
 .search-label {
@@ -40,6 +43,8 @@ h2 {
 select {
   font-family:'aaarghnormal';
   font-size: 18px;
+  padding-top: 4px;
+  cursor: pointer;
 }
 
 img {
@@ -56,7 +61,7 @@ img {
 }
 
 .flower-card {
-  box-shadow: 1px 1px 4px black;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.653);
   margin-top: 25px;
   border-radius: 25px;
   background-color: rgba(245, 241, 222, 0.591);
@@ -76,6 +81,8 @@ img {
 
 #flower-header {
   text-align: center;
+  font-size: 45px;
+
 }
 
 .modal-container {
@@ -99,21 +106,38 @@ img {
 }
 
 .modal {
-  background-color: grey;
-  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 30px 50px;
-  width: 600px;
+  width: 400px;
   max-width: 100%;
   text-align: center;
+}
+.modal p {
+  font-size: 18px;
 }
 
 ul {
   list-style-type: none;
+  margin-top: 10px;
+}
+
+li {
+  padding: 3px;
 }
 
 button {
   font-size: 18px;
+  cursor: pointer;
+  border-color: rgba(19, 19, 19, 0.795);
+  border-radius: 6px;
+  border-width: 1px;
+  background-color: rgba(211, 210, 210, 0.666);
+}
+button:hover {
+  background-color: rgba(187, 187, 187, 0.79);
+  box-shadow:0 0 1px rgba(0, 0, 0, 0.488)
 }
 
 .center {

@@ -18,6 +18,9 @@ function petalDropdownPopulate(flowers) {
       petalNumberArray.push(flower.petals)
     }
   })
+  petalNumberArray.sort(function (a, b) {
+    return a - b;
+  })
   petalNumberArray.forEach(number => {
     const dropdownOption = document.createElement("option") // create an option element
     dropdownOption.textContent = number // sets the text content to a number of petals
@@ -35,6 +38,8 @@ function colorDropdownPopulate(flowers) {
       flowerColorArray.push(flower.color)
     }
   })
+  flowerColorArray.sort()
+
   flowerColorArray.forEach(color => {
     const dropdownOption = document.createElement("option") // create an option element
     dropdownOption.textContent = color // sets the text content to a number of petals
@@ -51,6 +56,9 @@ function heightDropdownPopulate(flowers) {
     else {
       flowerHeightArray.push(flower.height)
     }
+  })
+  flowerHeightArray.sort(function (a, b) {
+    return a - b;
   })
   flowerHeightArray.forEach(height => {
     const dropdownOption = document.createElement("option") // create an option element
@@ -119,7 +127,15 @@ function searchButtonClick() {
     filteredFlowerArray3 = filteredFlowerArray2
   }
 
-  flowerIterator(filteredFlowerArray3)
+  if (filteredFlowerArray3.length === 0) {
+    const noFlowers = document.createElement('p')
+    noFlowers.textContent = "No flowers match the filter criteria"
+    flowerCardCollection.innerHTML = ""
+    document.body.append(noFlowers)
+  } else {
+    flowerIterator(filteredFlowerArray3)
+  }
+
 }
 
 // Renders the flower card on the page
@@ -161,9 +177,9 @@ function flowerDetailsDisplay(flower) {
   const flowerPetals = document.createElement("li") // create a list item for petals
   const flowerColor = document.createElement("li") // create a list item for color
   const flowerHeight = document.createElement("li")
-  flowerPetals.textContent = `Number of petals: ${flower.petals}` // set the text of the petals list item to the number from the database
-  flowerColor.textContent = `Color: ${flower.color}` // set the text of the color list item to the color from the database
-  flowerHeight.textContent = `Average height: ${flower.height} inches`
+  flowerPetals.innerHTML = `Petals:  ${flower.petals}` // set the text of the petals list item to the number from the database
+  flowerColor.textContent = `Color:  ${flower.color}` // set the text of the color list item to the color from the database
+  flowerHeight.textContent = `Height:  ${flower.height} inches`
   document.getElementById(flower.name).appendChild(flowerList) // append the unordered list to the flower card
   flowerList.append(flowerPetals, flowerColor, flowerHeight) // append the list items to the unordered list
 }
@@ -174,7 +190,7 @@ function detailOpenButtonDisplay(flower) {
   detailOpenButtonContainer.id = `${flower}-detail-button-container` // give the container an id
   detailOpenButtonContainer.className = "center"
   document.getElementById(flower.name).append(detailOpenButtonContainer) // append the button container to the flower card
-  
+
   const detailOpenButton = document.createElement("button") // create button
   detailOpenButton.id = `${flower}-detail-button` // set button id
   detailOpenButton.className = "open-button" // set class name

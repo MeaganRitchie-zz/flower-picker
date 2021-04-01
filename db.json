@@ -6,70 +6,79 @@
       "petals": 4,
       "height": 16,
       "photo": "http://www.npsnj.org/photo_galleries/images/gentian_fringed_2004sep12_0034_400x400.jpg",
-      "details": "This is some detail about this particular flower, the Fringed gentian."
+      "details": "Greater fringed-gentian is a beautiful, autumn-flowering plant, 8-24 in. tall, often branched above. Showy, blue flowers have four spreading petals that are fringed at the end and part way down the sides. A single, blue, fringed flower, opening in the sun and closing at night, is at the end of each erect stem of a branching plant. The petals are twisted together when the flower is closed."
     },
     {
       "name": "Bluebonnet",
       "color": "blue",
       "petals": 5,
       "height": 24,
-      "photo": "https://www.highcountrygardens.com/media/catalog/product/t/e/texas_bluebonnet.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:"
+      "photo": "https://www.highcountrygardens.com/media/catalog/product/t/e/texas_bluebonnet.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:",
+      "details": "Bluebonnets are typically herbaceous annuals and grow about 0.3 metre (1 foot) tall, though perennial species may be larger. They bear palmately compound leaves composed of about five silky-haired leaflets. The characteristic purplish blue flowers are usually marked in the centre with white or yellow and borne in spikes."
     },
     {
       "name": "Avalanche Lily",
       "color": "yellow",
       "petals": 6,
       "height": 12,
-      "photo": "https://www.fs.fed.us/wildflowers/plant-of-the-week/images/yellowavalanchelily/Erythronium_grandiflorum_main_early_nectar_source_for_ground_nesting_bees_in_Spring_NancyCotner_lg.jpg"
+      "photo": "https://www.fs.fed.us/wildflowers/plant-of-the-week/images/yellowavalanchelily/Erythronium_grandiflorum_main_early_nectar_source_for_ground_nesting_bees_in_Spring_NancyCotner_lg.jpg",
+      "details": "Two to three mottled, fleshy, elliptic, basal leaves, to 14 in. long, surround the one- to several-flowered 6-18 in. flower stalks. 1-5 pale to golden yellow flowers hang at end of a stalk that grows from between 2 broadly lanceolate basal leaves. One to five graceful, nodding, bell-shaped flowers are bright yellow. The sepals and petals are bent back fully, revealing the large, white stigma and yellow, red or white anthers. Yellow avlanche-lily, a perennial, often occurs in large patches."
     },
     {
       "name": "Western Wallflower",
       "color": "orange",
       "petals": 4,
       "height": 12,
-      "photo": "https://i0.wp.com/www.realgardensgrownatives.com/wp-content/uploads/2020/04/Erysimum-capitatum.jpg?resize=1000%2C1000&ssl=1"
+      "photo": "https://i0.wp.com/www.realgardensgrownatives.com/wp-content/uploads/2020/04/Erysimum-capitatum.jpg?resize=1000%2C1000&ssl=1",
+      "details": "Elongating cluster of stalked flowers at the tip of stems arising from leaf axils in the upper plant, and at the top of the stem. Flowers are bright yellow to orange-yellow, about ¾ inch across with 4 rounded petals and 6 stamens."
     },
     {
       "name": "Crown Vetch",
       "color": "pink",
       "petals": 5,
       "height": 24,
-      "photo": "https://nhgardensolutions.files.wordpress.com/2013/10/13-crown-vetch.jpg?w=500&h=372"
+      "photo": "https://nhgardensolutions.files.wordpress.com/2013/10/13-crown-vetch.jpg?w=500&h=372",
+      "details": "Crown Vetch is native to central and Eastern Europe, and the Caucus region of Asia. It was introduced to the US as early as the mid-1800s, and by the 1950s became widely planted as a groundcover, cover crop, and bank and slope stabilizer along roads and waterways. It is now found across the continental U.S."
     },
     {
-      "name": "Upright Prairie Coneflower",
+      "name": "Prairie Coneflower",
       "color": "yellow",
       "petals": 8,
       "height": 24,
-      "photo": "https://cdn11.bigcommerce.com/s-f7vi5gj1c3/images/stencil/1280x1280/products/490/878/ratibida-columnifera-perennials__17351.1579260762.jpg?c=2"
+      "photo": "https://cdn11.bigcommerce.com/s-f7vi5gj1c3/images/stencil/1280x1280/products/490/878/ratibida-columnifera-perennials__17351.1579260762.jpg?c=2",
+      "details": "A plant branched and leafy in lower part with long leafless stalks bearing flower heads of 3-7 yellow or yellow and red-brown, drooping rays surrounding a long, red-brown central disk. Its sombrero-shaped flower heads, is usually 1 1/2 ft. tall but can reach 3 ft. Flower petals range from dark red and yellow, to all red or all yellow. The flowers central brown disk protrudes 1/2 to 2 in. above the drooping petals. Leaves on the lower portion of the stem are feathery and deeply cleft."
     },
     {
       "name": "Field Chickweed",
       "color": "white",
       "petals": 5,
       "height": 8,
-      "photo": "https://newfs.s3.amazonaws.com/taxon-images-1000s1000/Caryophyllaceae/cerastium-strictum-fl-ahaines-a.jpg"
+      "photo": "https://newfs.s3.amazonaws.com/taxon-images-1000s1000/Caryophyllaceae/cerastium-strictum-fl-ahaines-a.jpg",
+      "details": "A plant with several stems leaning on the ground, and a white flower blooming at the end of each of the few branches of the nearly leafless flower cluster. Below the point where leaves attach the stem are downward-pointing hairs, those in flower cluster tipped with glands."
     },
     {
       "name": "Fendler's Sandwort",
       "color": "white",
       "petals": 5,
       "height": 8,
-      "photo": "https://swbiodiversity.org/imglib/h_seinet/seinet/Caryophyllaceae/photos/Arenaria-fendleri-F-web-N.jpg"
+      "photo": "https://swbiodiversity.org/imglib/h_seinet/seinet/Caryophyllaceae/photos/Arenaria-fendleri-F-web-N.jpg",
+      "details": "A tufted plant with many slender stems, very narrow leaves, and numerous small white flowers in open branched clusters. This common southern Rocky Mountain species gives the impression of numerous white stars in an airy tuft. There are a number of sandworts: Some form tight, sometimes prickly mats; others are tall and open but with flowers in tight heads."
     },
     {
       "name": "Aspen Sunflower",
       "color": "yellow",
       "petals": 21,
       "height": 36,
-      "photo": "https://www.diggingdog.com/images/ddog/Helianthella-quinquenervis-481.jpg"
+      "photo": "https://www.diggingdog.com/images/ddog/Helianthella-quinquenervis-481.jpg",
+      "details": "Helianthella quinquenervis, sometimes growing to an eye-catching four feet tall, is common, but scattered, in woodlands from the Aspen belt to the subalpine. Its bright yellow flowers are up to four inches in diameter, and its leaves are long and strap like.  Basal leaves are numerous; stem leaves are few."
     },
     {
       "name": "Geranium",
       "color": "purple",
       "petals": 5,
       "height": 18,
-      "photo": "http://southwestdesertflora.com/WebsiteFolders/Images/Geraniaceae/Geranium%20caespitosum,%20Pineywoods%20Geranium/5665Geranium-caespitosum-Pineywoods-Geranium660x413.jpg"
+      "photo": "http://southwestdesertflora.com/WebsiteFolders/Images/Geraniaceae/Geranium%20caespitosum,%20Pineywoods%20Geranium/5665Geranium-caespitosum-Pineywoods-Geranium660x413.jpg",
+      "details": "The many-toothed, deeply-lobed, bright-green leaves of this large, clumped wild geranium occur on strong, branching, 1-2 ft., flower stalks. A lightly-haired plant with several stems, leaves on long stalks, most near the base, and a few pink-lavender to purplish flowers in an open cluster near the top. Pinkish to lavender, 1 1/2 in. wide, saucer-shaped flowers occur at stem tips. Stem, leaves, and flower stalks are covered with sticky hairs."
     }
   ]
 }

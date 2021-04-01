@@ -11,35 +11,35 @@
 </head>
 
 <body>
-  <h1 id="flower-header">This Is Our Flower Picker!</h1>
-  <h2>Enter some information about your flower</h2>
+  <h1 id="flower-header">Identify a Colorado Wildflower</h1>
+  <h2>Filter the flowers</h2>
   <div id="search-bar">
     <div>
-      <label class="search-label" for="flower-color">What color?</label>
+      <label class="search-label" for="flower-color"></label>
       <select name="color-dropdown" id="flower-color">
-        <option value="no-filter">pick a color</option>
+        <option value="no-filter">Color</option>
       </select>
     </div>
     <div>
-      <label class="search-label" for="number-petals">How many petals?</label>
+      <label class="search-label" for="number-petals"></label>
       <select name="petals-dropdown" id="number-petals">
-        <option value="no-filter">pick petal count</option>
+        <option value="no-filter">Petal Count</option>
       </select>
     </div>
     <div>
-      <label class="search-label" for="flower-height">How tall?</label>
+      <label class="search-label" for="flower-height"></label>
       <select name="height-dropdown" id="flower-height">
-        <option value="no-filter">pick flower height</option>
+        <option value="no-filter">Height</option>
       </select>
     </div>
-    <button id="search-button">Search</button>
+    <button id="search-button">Filter</button>
   </div>
   <div id="flower-card-collection"></div>
 
   <div class="modal-container" id="modal-container">
     <div class="modal">
-      <h1>Flower details</h1>
-      <p id="flower-details">These are some details</p>
+      <h1 id="flower-name"></h1>
+      <p id="flower-details"></p>
       <button id="close-button">Close</button>
     </div>
   </div>

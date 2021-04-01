@@ -4,10 +4,9 @@ const searchButton = document.getElementById("search-button") // search button
 const flowerCardCollection = document.getElementById("flower-card-collection") // // collection (div) of all of the flower cards displayed
 const colorInput = document.getElementById("flower-color")
 const heightInput = document.getElementById("flower-height")
+const modalContainer = document.getElementById("modal-container")
+const closeButton = document.getElementById("close-button")
 let allFlowersArray = [] // empty array that will be filled with all of the flower objects in our backend database
-
-
-// we need a function that takes an empty array and looks for unique values for a particular key in the flowers database. Then, put those unique values into the empty array
 
 // Populate the petal dropdown
 function petalDropdownPopulate(flowers) {
@@ -42,6 +41,7 @@ function colorDropdownPopulate(flowers) {
     colorInput.append(dropdownOption)
   })
 }
+
 //Populate the height dropdown
 function heightDropdownPopulate(flowers) {
   const flowerHeightArray = []
@@ -120,13 +120,6 @@ function searchButtonClick() {
   }
 
   flowerIterator(filteredFlowerArray3)
-
-  // flowerCardCollection.innerHTML = "" // resets the collection of flower cards
-  // allFlowersArray.forEach(flower => { // iterates through the list of flowers
-  //   if (flower.petals == petalQuery) { // checks to see if the number of petals for each flower matches the search query
-  //     renderFlower(flower) // if the search query matches, render the flower card
-  //   }
-  // })
 }
 
 // Renders the flower card on the page
@@ -177,22 +170,26 @@ function flowerDetailsDisplay(flower) {
 
 // Create a detail open button
 function detailOpenButtonDisplay(flower) {
+  const detailOpenButtonContainer = document.createElement("div") // create a container for the button
+  detailOpenButtonContainer.id = `${flower}-detail-button-container` // give the container an id
+  detailOpenButtonContainer.className = "center"
+  document.getElementById(flower.name).append(detailOpenButtonContainer) // append the button container to the flower card
+  
   const detailOpenButton = document.createElement("button") // create button
   detailOpenButton.id = `${flower}-detail-button` // set button id
   detailOpenButton.className = "open-button" // set class name
-  detailOpenButton.innerHTML = "details" // set button text
-  document.getElementById(flower.name).appendChild(detailOpenButton) // append button to flower card
-  detailOpenButton.addEventListener("click", detailButtonClick)
+  detailOpenButton.innerHTML = "Details" // set button text
+  detailOpenButtonContainer.append(detailOpenButton) // append button to button container
+  detailOpenButton.addEventListener("click", () => {
+    detailButtonClick(flower)
+  })
 }
-
-const modalContainer = document.getElementById("modal-container")
-const closeButton = document.getElementById("close-button")
 
 function detailButtonClick(flower) {
   modalContainer.classList.add("show")
-
+  document.getElementById("flower-name").innerHTML = flower.name
+  document.getElementById("flower-details").innerHTML = flower.details
 }
-
 
 // Hide the modal container when the close button is clicked
 closeButton.addEventListener("click", () => {

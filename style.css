@@ -1,28 +1,42 @@
 @font-face {
     font-family: 'aaarghnormal';
-    src: url('aaargh-webfont.woff2') format('woff2'),
-         url('aaargh-webfont.woff') format('woff');
+    src: url('Font Things/aaargh-webfont.woff2') format('woff2'),
+    url('Font Things/aaargh-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
-
+@font-face {
+    font-family: 'carolineregular';
+    src: url('Font Things/caroline-webfont.woff2') format('woff2'),
+    url('Font Things/caroline-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
   background-color: rgba(175, 192, 225, 0.427);
 }
 h2 {
   margin-bottom: 8px;
-  font-family: "aaargh";
+  font-family:'aaarghnormal';
 }
 #search-bar {
-  background-color: rgba(136, 171, 237, 0.625);
+  background-color: rgba(166, 190, 235, 0.516);
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  color: rgb(93, 131, 201);
 }
 
+.search-label {
+  font-family:'aaarghnormal';
+  font-weight: bolder;
+  font-size: 20px;
+}
+select {
+  font-family:'aaarghnormal'
+}
 
 img {
   height: 300px;
@@ -51,6 +65,9 @@ img {
 .flower-name {
   text-align: center;
   margin-top: 6px;
+  margin-bottom: 4px;
+  font-family: "carolineregular";
+  font-size: 40px;
 }
 
 #flower-header {

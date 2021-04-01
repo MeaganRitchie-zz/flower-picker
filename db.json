@@ -34,6 +34,41 @@
       "petals": 5,
       "height": 24,
       "photo": "https://nhgardensolutions.files.wordpress.com/2013/10/13-crown-vetch.jpg?w=500&h=372"
+    },
+    {
+      "name": "Upright Prairie Coneflower",
+      "color": "yellow",
+      "petals": 8,
+      "height": 24,
+      "photo": "https://cdn11.bigcommerce.com/s-f7vi5gj1c3/images/stencil/1280x1280/products/490/878/ratibida-columnifera-perennials__17351.1579260762.jpg?c=2"
+    },
+    {
+      "name": "Field Chickweed",
+      "color": "white",
+      "petals": 5,
+      "height": 8,
+      "photo": "https://newfs.s3.amazonaws.com/taxon-images-1000s1000/Caryophyllaceae/cerastium-strictum-fl-ahaines-a.jpg"
+    },
+    {
+      "name": "Fendler's Sandwort",
+      "color": "white",
+      "petals": 5,
+      "height": 8,
+      "photo": "https://swbiodiversity.org/imglib/h_seinet/seinet/Caryophyllaceae/photos/Arenaria-fendleri-F-web-N.jpg"
+    },
+    {
+      "name": "Aspen Sunflower",
+      "color": "yellow",
+      "petals": 21,
+      "height": 36,
+      "photo": "https://www.diggingdog.com/images/ddog/Helianthella-quinquenervis-481.jpg"
+    },
+    {
+      "name": "Geranium",
+      "color": "purple",
+      "petals": 5,
+      "height": 18,
+      "photo": "http://southwestdesertflora.com/WebsiteFolders/Images/Geraniaceae/Geranium%20caespitosum,%20Pineywoods%20Geranium/5665Geranium-caespitosum-Pineywoods-Geranium660x413.jpg"
     }
   ]
 }

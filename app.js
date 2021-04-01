@@ -179,18 +179,19 @@ function flowerDetailsDisplay(flower) {
 function detailOpenButtonDisplay(flower) {
   const detailOpenButton = document.createElement("button") // create button
   detailOpenButton.id = `${flower}-detail-button` // set button id
-  detailOpenButton.className = "open-button"
+  detailOpenButton.className = "open-button" // set class name
   detailOpenButton.innerHTML = "details" // set button text
   document.getElementById(flower.name).appendChild(detailOpenButton) // append button to flower card
-  detailOpenButton.addEventListener("click", () => {
-    console.log(flower.name)
-  })
+  detailOpenButton.addEventListener("click", detailButtonClick)
 }
 
-let openButtons = document.getElementsByClassName("open-button") // returns an HTML collection
 const modalContainer = document.getElementById("modal-container")
 const closeButton = document.getElementById("close-button")
 
+function detailButtonClick(flower) {
+  modalContainer.classList.add("show")
+
+}
 
 
 // Hide the modal container when the close button is clicked

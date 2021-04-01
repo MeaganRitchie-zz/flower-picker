@@ -75,5 +75,31 @@ img {
 }
 
 .modal-container {
-  display: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modal-container.show {
+  pointer-events: auto;
+  opacity: 1;
+
+}
+
+.modal {
+  background-color: grey;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 30px 50px;
+  width: 600px;
+  max-width: 100%;
+  text-align: center;
 }

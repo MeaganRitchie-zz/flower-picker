@@ -85,4 +85,3 @@ Created by [Jesse Houser](https://www.linkedin.com/in/jesseahouser/) and [Meagan
 
 ## License 
 [Click to view](https://www.gnu.org/licenses/gpl-3.0.en.html)
-

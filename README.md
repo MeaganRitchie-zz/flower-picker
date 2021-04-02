@@ -2,6 +2,7 @@
 
 ## Table of contents
 * [General info](#general-info)
+* [Intro Animation](#intro-animation)
 * [Intro Video](#intro-video)
 * [Technologies](#technologies)
 * [Setup](#setup)
@@ -16,6 +17,9 @@ Wildflower is an identifier app for Colorado wildflowers. Users can sort through
 
 ## Intro Animation
 ![GIF](wildflower.gif)
+
+## Intro Video
+[Wildflower on YouTube](https://youtu.be/0ivMO83wqtE)
 
 ## Technologies
 * JavaScript

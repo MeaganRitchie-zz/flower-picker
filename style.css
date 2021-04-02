@@ -21,7 +21,7 @@ h2 {
   margin-bottom: 8px;
   font-family:'aaarghnormal';
 }
-#search-bar {
+#filter-bar {
   padding-top: 10px;
   padding-bottom: 10px;
   width: 500px;
@@ -35,7 +35,7 @@ h2 {
   
 }
 
-.search-label {
+.filter-label {
   font-family:'aaarghnormal';
   font-weight: bolder;
   font-size: 20px;

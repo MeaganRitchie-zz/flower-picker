@@ -7,34 +7,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="app.js" defer></script>
   <link rel="stylesheet" href="style.css" />
-  <title>Flower Picker</title>
+  <title>Wildflower</title>
 </head>
 
 <body>
   <h1 id="flower-header">IDENTIFY A COLORADO WILDFLOWER</h1>
-  <div id="search-bar">
+  <div id="filter-bar">
     <div>
-      <label class="search-label" for="flower-color"></label>
+      <label class="filter-label" for="flower-color"></label>
       <select name="color-dropdown" id="flower-color">
         <option value="no-filter">Color</option>
       </select>
     </div>
     <div>
-      <label class="search-label" for="number-petals"></label>
+      <label class="filter-label" for="number-petals"></label>
       <select name="petals-dropdown" id="number-petals">
         <option value="no-filter">Petal Count</option>
       </select>
     </div>
     <div>
-      <label class="search-label" for="flower-height"></label>
+      <label class="filter-label" for="flower-height"></label>
       <select name="height-dropdown" id="flower-height">
         <option value="no-filter">Height</option>
       </select>
     </div>
-    <button id="search-button">Filter</button>
+    <button id="filter-button">Filter</button>
   </div>
   <div id="flower-card-collection"></div>
-
   <div class="modal-container" id="modal-container">
     <div class="modal">
       <h1 id="flower-name"></h1>
@@ -42,7 +41,6 @@
       <button id="close-button">Close</button>
     </div>
   </div>
-
 </body>
 
 </html>

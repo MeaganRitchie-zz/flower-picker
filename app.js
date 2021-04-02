@@ -1,12 +1,13 @@
 const flowerUrl = "http://localhost:3000/flowers" // URL for our backend database
 const petalInput = document.getElementById("number-petals") // text input for number of petals
-const searchButton = document.getElementById("search-button") // search button
-const flowerCardCollection = document.getElementById("flower-card-collection") // // collection (div) of all of the flower cards displayed
-const colorInput = document.getElementById("flower-color")
-const heightInput = document.getElementById("flower-height")
-const modalContainer = document.getElementById("modal-container")
-const closeButton = document.getElementById("close-button")
+const filterButton = document.getElementById("filter-button") // filter button
+const flowerCardCollection = document.getElementById("flower-card-collection") // collection (div) of all of the flower cards displayed
+const colorInput = document.getElementById("flower-color") // filter select color
+const heightInput = document.getElementById("flower-height") // filter select height
+const modalContainer = document.getElementById("modal-container") // pop-up window
+const closeButton = document.getElementById("close-button") // pop-up close button
 let allFlowersArray = [] // empty array that will be filled with all of the flower objects in our backend database
+filterButton.addEventListener("click", filterButtonClick) // listens for click on filter button and runs a function
 
 // Populate the petal dropdown
 function petalDropdownPopulate(flowers) {
@@ -86,30 +87,29 @@ function flowerIterator(flowers) {
   })
 }
 
-searchButton.addEventListener("click", searchButtonClick) // listens for click on search button and runs a function
 
-// Search function invoked when search button is clicked
-function searchButtonClick() {
+// filter function invoked when filter button is clicked
+function filterButtonClick() {
   const colorQuery = colorInput.value // set color query to the text value of the color input
   const petalQuery = petalInput.value // set petal query to the text value of the petal input
   const heightQuery = heightInput.value
 
   let filteredFlowerArray1 = []
-  if (colorQuery !== "no-filter") {
+  if (colorQuery !== "no-filter") { // check to see if a color filter is selected
     allFlowersArray.forEach(flower => { // iterates through the list of flowers
-      if (flower.color == colorQuery) { // checks to see if the number of petals for each flower matches the search query
-        filteredFlowerArray1.push(flower)
+      if (flower.color == colorQuery) { // checks to see if the number of petals for each flower matches the filter query
+        filteredFlowerArray1.push(flower) // adds matching flowers to the array
       }
     })
   } else {
-    filteredFlowerArray1 = allFlowersArray
+    filteredFlowerArray1 = allFlowersArray //
   }
 
   let filteredFlowerArray2 = []
-  if (petalQuery !== "no-filter") {
-    filteredFlowerArray1.forEach(flower => { // iterates through the list of flowers
-      if (flower.petals == petalQuery) { // checks to see if the number of petals for each flower matches the search query
-        filteredFlowerArray2.push(flower)
+  if (petalQuery !== "no-filter") { // check to see if a petal filter is selected
+    filteredFlowerArray1.forEach(flower => { // iterates through the list of flowers from the filtered array (color)
+      if (flower.petals == petalQuery) { // checks to see if the number of petals for each flower matches the filter query
+        filteredFlowerArray2.push(flower) // adds matching flowers to the array
       }
     })
   } else {
@@ -118,22 +118,22 @@ function searchButtonClick() {
 
   let filteredFlowerArray3 = []
   if (heightQuery !== "no-filter") {
-    filteredFlowerArray2.forEach(flower => { // iterates through the list of flowers
-      if (flower.height == heightQuery) { // checks to see if the number of petals for each flower matches the search query
-        filteredFlowerArray3.push(flower)
+    filteredFlowerArray2.forEach(flower => { // iterates through the list of flowers from the filtered array (color + petals)
+      if (flower.height == heightQuery) { // checks to see if the number of petals for each flower matches the filter query
+        filteredFlowerArray3.push(flower) // adds matching flowers to the array
       }
     })
   } else {
     filteredFlowerArray3 = filteredFlowerArray2
   }
 
-  if (filteredFlowerArray3.length === 0) {
+  if (filteredFlowerArray3.length === 0) { // check to see if any flowers match the filter
     const noFlowers = document.createElement('p')
     noFlowers.textContent = "No flowers match the filter criteria"
-    flowerCardCollection.innerHTML = ""
-    document.body.append(noFlowers)
+    flowerCardCollection.innerHTML = "" // if no flowers match, remove all of the cards...
+    flowerCardCollection.append(noFlowers) // and display the message
   } else {
-    flowerIterator(filteredFlowerArray3)
+    flowerIterator(filteredFlowerArray3) // pass the list of filtered flower to the flower iterator
   }
 
 }
@@ -201,6 +201,7 @@ function detailOpenButtonDisplay(flower) {
   })
 }
 
+// Show the modal container with the details button is clicked
 function detailButtonClick(flower) {
   modalContainer.classList.add("show")
   document.getElementById("flower-name").innerHTML = flower.name

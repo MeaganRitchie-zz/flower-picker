@@ -14,11 +14,11 @@
 ## General info
 Wildflower is an identifier app for Colorado wildflowers. Users can sort through flowers using a filter. 
 
-## Intro Video
+## Intro Animation
 ![GIF](wildflower.gif)
 
 ## Technologies
-* Javascript
+* JavaScript
 * HTML
 * CSS
 
@@ -62,7 +62,6 @@ let filteredFlowerArray1 = []
 }
 ```
 
-
 ## Features
 * Displays all wildflowers in the database
 * Sort flowers by color, petal count, and/or height
@@ -70,9 +69,8 @@ let filteredFlowerArray1 = []
 * Lets the user know if there are no flowers that match the filter criteria
 
 ### To-do list:
-* Fix bug for repeating "No flowers match the filter criteria"
 * Add a button for filter reset
-* Refactor 
+* Refactor
 * Sort displayed flowers alphabetically 
 
 ## Status

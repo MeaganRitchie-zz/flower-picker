@@ -1,13 +1,12 @@
 const flowerUrl = "http://localhost:3000/flowers" // URL for our backend database
-const petalInput = document.getElementById("number-petals") // text input for number of petals
-const filterButton = document.getElementById("filter-button") // filter button
-const flowerCardCollection = document.getElementById("flower-card-collection") // collection (div) of all of the flower cards displayed
+const flowerCardCollection = document.getElementById("flower-card-collection") // collection of all of the flower cards displayed
+const petalInput = document.getElementById("number-petals") // filter select number of petals
 const colorInput = document.getElementById("flower-color") // filter select color
 const heightInput = document.getElementById("flower-height") // filter select height
+const filterButton = document.getElementById("filter-button") // filter button
 const modalContainer = document.getElementById("modal-container") // pop-up window
 const closeButton = document.getElementById("close-button") // pop-up close button
-let allFlowersArray = [] // empty array that will be filled with all of the flower objects in our backend database
-filterButton.addEventListener("click", filterButtonClick) // listens for click on filter button and runs a function
+let allFlowersArray = [] // list to be filled with all of the flowers in our database
 
 
 //////////////////////////////
@@ -41,6 +40,7 @@ function renderFlower(flower) {
   flowerDetailsDisplay(flower)
   detailOpenButtonDisplay(flower)
 }
+
 
 ////////////////////////
 // BUILD FLOWER CARDS //
@@ -107,14 +107,14 @@ function detailOpenButtonDisplay(flower) {
 
 // Show the modal container with the details button is clicked
 function detailButtonClick(flower) {
-  modalContainer.classList.add("show")
-  document.getElementById("flower-name").innerHTML = flower.name
-  document.getElementById("flower-details").innerHTML = flower.details
+  modalContainer.classList.add("show") // show the pop-up
+  document.getElementById("flower-name").innerHTML = flower.name // display the flower name
+  document.getElementById("flower-details").innerHTML = flower.details // display the flower details
 }
 
 // Hide the modal container when the close button is clicked
 closeButton.addEventListener("click", () => {
-  modalContainer.classList.remove("show")
+  modalContainer.classList.remove("show") // hide the pop-up
 })
 
 
@@ -126,10 +126,10 @@ closeButton.addEventListener("click", () => {
 function petalDropdownPopulate(flowers) {
   const petalNumberArray = []
   allFlowersArray.forEach(flower => { // make an array with all of the unique numbers of petals
-    if (petalNumberArray.includes(flower.petals)) {
+    if (petalNumberArray.includes(flower.petals)) { // check to see if array already includes the number
     }
     else {
-      petalNumberArray.push(flower.petals)
+      petalNumberArray.push(flower.petals) // if it does not, add that number to the array
     }
   })
   petalNumberArray.sort(function (a, b) {
@@ -146,10 +146,10 @@ function petalDropdownPopulate(flowers) {
 function colorDropdownPopulate(flowers) {
   const flowerColorArray = []
   allFlowersArray.forEach(flower => { // make an array with all of the unique numbers of petals
-    if (flowerColorArray.includes(flower.color)) {
+    if (flowerColorArray.includes(flower.color)) { // check to see if array already includes the number
     }
     else {
-      flowerColorArray.push(flower.color)
+      flowerColorArray.push(flower.color) // if it does not, add that number to the array
     }
   })
   flowerColorArray.sort()
@@ -165,10 +165,10 @@ function colorDropdownPopulate(flowers) {
 function heightDropdownPopulate(flowers) {
   const flowerHeightArray = []
   allFlowersArray.forEach(flower => { // make an array with all of the unique numbers of petals
-    if (flowerHeightArray.includes(flower.height)) {
+    if (flowerHeightArray.includes(flower.height)) { // check to see if array already includes the number
     }
     else {
-      flowerHeightArray.push(flower.height)
+      flowerHeightArray.push(flower.height) // if it does not, add that number to the array
     }
   })
   flowerHeightArray.sort(function (a, b) {
@@ -185,6 +185,8 @@ function heightDropdownPopulate(flowers) {
 ////////////////////////
 // FILTER THE FLOWERS //
 ////////////////////////
+
+filterButton.addEventListener("click", filterButtonClick) // listens for click on filter button and runs a function
 
 // filter function invoked when filter button is clicked
 function filterButtonClick() {

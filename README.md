@@ -70,8 +70,9 @@ let filteredFlowerArray1 = []
 
 ### To-do list:
 * Add a button for filter reset
+* Add a flower to the database
 * Refactor
-* Sort displayed flowers alphabetically 
+* Sort displayed flowers alphabetically
 
 ## Status
 Project is: finished with option to expand functionality and DRY out code.

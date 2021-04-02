@@ -9,6 +9,119 @@ const closeButton = document.getElementById("close-button") // pop-up close butt
 let allFlowersArray = [] // empty array that will be filled with all of the flower objects in our backend database
 filterButton.addEventListener("click", filterButtonClick) // listens for click on filter button and runs a function
 
+
+//////////////////////////////
+// DATA FETCH AND RENDERING //
+//////////////////////////////
+
+// GET the flower data
+fetch(flowerUrl)
+  .then(response => response.json())
+  .then(flowers => {
+    allFlowersArray = flowers
+    flowerIterator(flowers)
+    petalDropdownPopulate(flowers)
+    colorDropdownPopulate(flowers)
+    heightDropdownPopulate(flowers)
+  })
+
+// Renders all flowers in the database
+function flowerIterator(flowers) {
+  flowerCardCollection.innerHTML = ""
+  flowers.forEach(flower => { // iterates through each flower
+    renderFlower(flower) // render the flower and its information
+  })
+}
+
+// Renders the flower card on the page
+function renderFlower(flower) {
+  createFlowerCard(flower)
+  flowerImageDisplay(flower)
+  flowerNameDisplay(flower)
+  flowerDetailsDisplay(flower)
+  detailOpenButtonDisplay(flower)
+}
+
+////////////////////////
+// BUILD FLOWER CARDS //
+////////////////////////
+
+// Create a flower card
+function createFlowerCard(flower) {
+  const flowerCard = document.createElement("div") // create a div for the card
+  const flowerCardCollection = document.getElementById("flower-card-collection") // grab the parent div
+  flowerCard.id = flower.name // set the id of the flower card div to its name
+  flowerCard.className = "flower-card"
+  flowerCardCollection.appendChild(flowerCard) // append the flower card to the collection
+}
+
+// Display flower name in the card
+function flowerNameDisplay(flower) {
+  const flowerName = document.createElement("h1") // create an h1
+  flowerName.className = "flower-name" // set the class name
+  flowerName.textContent = flower.name // set the text content to the name of the flower from the database
+  document.getElementById(flower.name).appendChild(flowerName) // append the name to the flower card
+}
+
+// Display flower image inside of the card
+function flowerImageDisplay(flower) {
+  const flowerImage = document.createElement("img") // create an image element
+  flowerImage.src = flower.photo // set the image source to the url from the backend database
+  document.getElementById(flower.name).appendChild(flowerImage) // append the image to the flower card
+}
+
+// Display flower details in the card
+function flowerDetailsDisplay(flower) {
+  const flowerList = document.createElement("ul") // create an unordered list
+  const flowerPetals = document.createElement("li") // create a list item for petals
+  const flowerColor = document.createElement("li") // create a list item for color
+  const flowerHeight = document.createElement("li")
+  flowerPetals.innerHTML = `Petals:  ${flower.petals}` // set the text of the petals list item to the number from the database
+  flowerColor.textContent = `Color:  ${flower.color}` // set the text of the color list item to the color from the database
+  flowerHeight.textContent = `Height:  ${flower.height} inches`
+  document.getElementById(flower.name).appendChild(flowerList) // append the unordered list to the flower card
+  flowerList.append(flowerPetals, flowerColor, flowerHeight) // append the list items to the unordered list
+}
+
+// Create a detail open button
+function detailOpenButtonDisplay(flower) {
+  const detailOpenButtonContainer = document.createElement("div") // create a container for the button
+  detailOpenButtonContainer.id = `${flower}-detail-button-container` // give the container an id
+  detailOpenButtonContainer.className = "center"
+  document.getElementById(flower.name).append(detailOpenButtonContainer) // append the button container to the flower card
+
+  const detailOpenButton = document.createElement("button") // create button
+  detailOpenButton.id = `${flower}-detail-button` // set button id
+  detailOpenButton.className = "open-button" // set class name
+  detailOpenButton.innerHTML = "Details" // set button text
+  detailOpenButtonContainer.append(detailOpenButton) // append button to button container
+  detailOpenButton.addEventListener("click", () => {
+    detailButtonClick(flower)
+  })
+}
+
+
+//////////////////////////
+// FLOWER DETAIL POP-UP //
+//////////////////////////
+
+// Show the modal container with the details button is clicked
+function detailButtonClick(flower) {
+  modalContainer.classList.add("show")
+  document.getElementById("flower-name").innerHTML = flower.name
+  document.getElementById("flower-details").innerHTML = flower.details
+}
+
+// Hide the modal container when the close button is clicked
+closeButton.addEventListener("click", () => {
+  modalContainer.classList.remove("show")
+})
+
+
+///////////////////////
+// DROP-DOWN FILTERS //
+///////////////////////
+
 // Populate the petal dropdown
 function petalDropdownPopulate(flowers) {
   const petalNumberArray = []
@@ -68,25 +181,10 @@ function heightDropdownPopulate(flowers) {
   })
 }
 
-// GET the flower data
-fetch(flowerUrl)
-  .then(response => response.json())
-  .then(flowers => {
-    allFlowersArray = flowers
-    flowerIterator(flowers)
-    petalDropdownPopulate(flowers)
-    colorDropdownPopulate(flowers)
-    heightDropdownPopulate(flowers)
-  })
 
-// Renders all flowers in the database
-function flowerIterator(flowers) {
-  flowerCardCollection.innerHTML = ""
-  flowers.forEach(flower => { // iterates through each flower
-    renderFlower(flower) // render the flower and its information
-  })
-}
-
+////////////////////////
+// FILTER THE FLOWERS //
+////////////////////////
 
 // filter function invoked when filter button is clicked
 function filterButtonClick() {
@@ -135,80 +233,4 @@ function filterButtonClick() {
   } else {
     flowerIterator(filteredFlowerArray3) // pass the list of filtered flower to the flower iterator
   }
-
 }
-
-// Renders the flower card on the page
-function renderFlower(flower) {
-  createFlowerCard(flower)
-  flowerImageDisplay(flower)
-  flowerNameDisplay(flower)
-  flowerDetailsDisplay(flower)
-  detailOpenButtonDisplay(flower)
-}
-
-// Create a flower card
-function createFlowerCard(flower) {
-  const flowerCard = document.createElement("div") // create a div for the card
-  const flowerCardCollection = document.getElementById("flower-card-collection") // grab the parent div
-  flowerCard.id = flower.name // set the id of the flower card div to its name
-  flowerCard.className = "flower-card"
-  flowerCardCollection.appendChild(flowerCard) // append the flower card to the collection
-}
-
-// Display flower name in the card
-function flowerNameDisplay(flower) {
-  const flowerName = document.createElement("h1") // create an h1
-  flowerName.className = "flower-name" // set the class name
-  flowerName.textContent = flower.name // set the text content to the name of the flower from the database
-  document.getElementById(flower.name).appendChild(flowerName) // append the name to the flower card
-}
-
-// Display flower image inside of the card
-function flowerImageDisplay(flower) {
-  const flowerImage = document.createElement("img") // create an image element
-  flowerImage.src = flower.photo // set the image source to the url from the backend database
-  document.getElementById(flower.name).appendChild(flowerImage) // append the image to the flower card
-}
-
-// Display flower details in the card
-function flowerDetailsDisplay(flower) {
-  const flowerList = document.createElement("ul") // create an unordered list
-  const flowerPetals = document.createElement("li") // create a list item for petals
-  const flowerColor = document.createElement("li") // create a list item for color
-  const flowerHeight = document.createElement("li")
-  flowerPetals.innerHTML = `Petals:  ${flower.petals}` // set the text of the petals list item to the number from the database
-  flowerColor.textContent = `Color:  ${flower.color}` // set the text of the color list item to the color from the database
-  flowerHeight.textContent = `Height:  ${flower.height} inches`
-  document.getElementById(flower.name).appendChild(flowerList) // append the unordered list to the flower card
-  flowerList.append(flowerPetals, flowerColor, flowerHeight) // append the list items to the unordered list
-}
-
-// Create a detail open button
-function detailOpenButtonDisplay(flower) {
-  const detailOpenButtonContainer = document.createElement("div") // create a container for the button
-  detailOpenButtonContainer.id = `${flower}-detail-button-container` // give the container an id
-  detailOpenButtonContainer.className = "center"
-  document.getElementById(flower.name).append(detailOpenButtonContainer) // append the button container to the flower card
-
-  const detailOpenButton = document.createElement("button") // create button
-  detailOpenButton.id = `${flower}-detail-button` // set button id
-  detailOpenButton.className = "open-button" // set class name
-  detailOpenButton.innerHTML = "Details" // set button text
-  detailOpenButtonContainer.append(detailOpenButton) // append button to button container
-  detailOpenButton.addEventListener("click", () => {
-    detailButtonClick(flower)
-  })
-}
-
-// Show the modal container with the details button is clicked
-function detailButtonClick(flower) {
-  modalContainer.classList.add("show")
-  document.getElementById("flower-name").innerHTML = flower.name
-  document.getElementById("flower-details").innerHTML = flower.details
-}
-
-// Hide the modal container when the close button is clicked
-closeButton.addEventListener("click", () => {
-  modalContainer.classList.remove("show")
-})

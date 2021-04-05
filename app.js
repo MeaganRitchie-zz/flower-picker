@@ -24,7 +24,7 @@ fetch(flowerUrl)
     heightDropdownPopulate(flowers)
   })
 
-// Renders all flowers in the database
+// Render all flowers in the database
 function flowerIterator(flowers) {
   flowerCardCollection.innerHTML = ""
   flowers.forEach(flower => { // iterates through each flower
@@ -32,7 +32,7 @@ function flowerIterator(flowers) {
   })
 }
 
-// Renders the flower card on the page
+// Render the flower card on the page
 function renderFlower(flower) {
   createFlowerCard(flower)
   flowerImageDisplay(flower)
@@ -95,7 +95,7 @@ function detailOpenButtonDisplay(flower) {
   detailOpenButton.className = "open-button" // set class name
   detailOpenButton.innerHTML = "Details" // set button text
   detailOpenButtonContainer.append(detailOpenButton) // append button to button container
-  detailOpenButton.addEventListener("click", () => {
+  detailOpenButton.addEventListener("click", () => { // listen for details button click
     detailButtonClick(flower)
   })
 }
@@ -105,7 +105,7 @@ function detailOpenButtonDisplay(flower) {
 // FLOWER DETAIL POP-UP //
 //////////////////////////
 
-// Show the modal container with the details button is clicked
+// Show and populate the modal container when the details button is clicked
 function detailButtonClick(flower) {
   modalContainer.classList.add("show") // show the pop-up
   document.getElementById("flower-name").innerHTML = flower.name // display the flower name
@@ -132,13 +132,13 @@ function petalDropdownPopulate(flowers) {
       petalNumberArray.push(flower.petals) // if it does not, add that number to the array
     }
   })
-  petalNumberArray.sort(function (a, b) {
+  petalNumberArray.sort(function (a, b) { // sort the array in ascending numerical order
     return a - b;
   })
   petalNumberArray.forEach(number => {
     const dropdownOption = document.createElement("option") // create an option element
-    dropdownOption.textContent = number // sets the text content to a number of petals
-    petalInput.append(dropdownOption)
+    dropdownOption.textContent = number // set the text content to a number of petals
+    petalInput.append(dropdownOption) // append the option element
   })
 }
 
@@ -152,12 +152,12 @@ function colorDropdownPopulate(flowers) {
       flowerColorArray.push(flower.color) // if it does not, add that number to the array
     }
   })
-  flowerColorArray.sort()
+  flowerColorArray.sort() // sort the array in ascending alphabetical order
 
   flowerColorArray.forEach(color => {
     const dropdownOption = document.createElement("option") // create an option element
-    dropdownOption.textContent = color // sets the text content to a number of petals
-    colorInput.append(dropdownOption)
+    dropdownOption.textContent = color // set the text content to a number of petals
+    colorInput.append(dropdownOption) // append the option element
   })
 }
 
@@ -171,13 +171,13 @@ function heightDropdownPopulate(flowers) {
       flowerHeightArray.push(flower.height) // if it does not, add that number to the array
     }
   })
-  flowerHeightArray.sort(function (a, b) {
+  flowerHeightArray.sort(function (a, b) { // sort the array in ascending numerical order
     return a - b;
   })
   flowerHeightArray.forEach(height => {
     const dropdownOption = document.createElement("option") // create an option element
-    dropdownOption.textContent = height // sets the text content to a number of petals
-    heightInput.append(dropdownOption)
+    dropdownOption.textContent = height // set the text content to a number of petals
+    heightInput.append(dropdownOption) // append the option element
   })
 }
 
@@ -186,53 +186,53 @@ function heightDropdownPopulate(flowers) {
 // FILTER THE FLOWERS //
 ////////////////////////
 
-filterButton.addEventListener("click", filterButtonClick) // listens for click on filter button and runs a function
+filterButton.addEventListener("click", filterButtonClick) // listen for click on filter button and runs a function
 
 // filter function invoked when filter button is clicked
 function filterButtonClick() {
   const colorQuery = colorInput.value // set color query to the text value of the color input
   const petalQuery = petalInput.value // set petal query to the text value of the petal input
-  const heightQuery = heightInput.value
+  const heightQuery = heightInput.value // set height query to the text value of the heigh input
 
   let filteredFlowerArray1 = []
   if (colorQuery !== "no-filter") { // check to see if a color filter is selected
-    allFlowersArray.forEach(flower => { // iterates through the list of flowers
-      if (flower.color == colorQuery) { // checks to see if the number of petals for each flower matches the filter query
-        filteredFlowerArray1.push(flower) // adds matching flowers to the array
+    allFlowersArray.forEach(flower => { // iterate through the list of flowers
+      if (flower.color == colorQuery) { // check to see if the number of petals for each flower matches the filter query
+        filteredFlowerArray1.push(flower) // add matching flowers to the first filter array
       }
     })
-  } else {
-    filteredFlowerArray1 = allFlowersArray //
+  } else { // if no color filter is selected
+    filteredFlowerArray1 = allFlowersArray // set the first filter array equal to the entire flower collection
   }
 
   let filteredFlowerArray2 = []
   if (petalQuery !== "no-filter") { // check to see if a petal filter is selected
-    filteredFlowerArray1.forEach(flower => { // iterates through the list of flowers from the filtered array (color)
-      if (flower.petals == petalQuery) { // checks to see if the number of petals for each flower matches the filter query
-        filteredFlowerArray2.push(flower) // adds matching flowers to the array
+    filteredFlowerArray1.forEach(flower => { // iterate through the list of flowers from the first filtered array (color)
+      if (flower.petals == petalQuery) { // check to see if the number of petals for each flower matches the filter query
+        filteredFlowerArray2.push(flower) // add matching flowers to the second filter array
       }
     })
-  } else {
-    filteredFlowerArray2 = filteredFlowerArray1
+  } else { // if no petal filter is selected
+    filteredFlowerArray2 = filteredFlowerArray1 // set the second filter array equal to the first filter array
   }
 
   let filteredFlowerArray3 = []
   if (heightQuery !== "no-filter") {
-    filteredFlowerArray2.forEach(flower => { // iterates through the list of flowers from the filtered array (color + petals)
-      if (flower.height == heightQuery) { // checks to see if the number of petals for each flower matches the filter query
-        filteredFlowerArray3.push(flower) // adds matching flowers to the array
+    filteredFlowerArray2.forEach(flower => { // iterate through the list of flowers from the second filtered array (color + petals)
+      if (flower.height == heightQuery) { // check to see if the number of petals for each flower matches the filter query
+        filteredFlowerArray3.push(flower) // add matching flowers to the third filter array
       }
     })
-  } else {
-    filteredFlowerArray3 = filteredFlowerArray2
+  } else { // if no height filter is selected
+    filteredFlowerArray3 = filteredFlowerArray2 // set the third filter array equal to the second filter array
   }
 
-  if (filteredFlowerArray3.length === 0) { // check to see if any flowers match the filter
-    const noFlowers = document.createElement('p')
-    noFlowers.textContent = "No flowers match the filter criteria"
-    flowerCardCollection.innerHTML = "" // if no flowers match, remove all of the cards...
+  if (filteredFlowerArray3.length === 0) { // check to see if no flowers in the database match the filter selections
+    const noFlowers = document.createElement('p') // create a paragraph element
+    noFlowers.textContent = "No flowers match the filter criteria" // set the text content of the message
+    flowerCardCollection.innerHTML = "" // remove all of the flower cards
     flowerCardCollection.append(noFlowers) // and display the message
-  } else {
-    flowerIterator(filteredFlowerArray3) // pass the list of filtered flower to the flower iterator
+  } else { // if there are flowers in the database that match the filter
+    flowerIterator(filteredFlowerArray3) // pass the array of filtered flowers to the flower iterator
   }
 }

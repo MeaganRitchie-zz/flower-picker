@@ -33,7 +33,7 @@ json-server --watch db.json
 open index.html
 ```
 ## Code Example
-```
+``` js
 let filteredFlowerArray1 = []
   if (colorQuery !== "no-filter") {
     allFlowersArray.forEach(flower => { 
@@ -46,7 +46,7 @@ let filteredFlowerArray1 = []
   }
   ```
 
-  ```
+  ``` js
   function colorDropdownPopulate(flowers) {
   const flowerColorArray = []
   allFlowersArray.forEach(flower => { 
